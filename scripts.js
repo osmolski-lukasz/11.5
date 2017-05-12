@@ -4,10 +4,13 @@ function Button(text) {
 
 Button.prototype = {
     create: function() {
+        var self = this;
         this.$element = $('<button>');
         this.$element.text(this.text);
         this.$element.click(function() {
             alert(self.text);
+            console.log(this);
+            console.log(self);
         });
         this.$element.appendTo($('body'));
     }
